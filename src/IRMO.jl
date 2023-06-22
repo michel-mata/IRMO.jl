@@ -28,9 +28,6 @@ module IRMO
     export social_norms
     const social_norms = ["SC","SJ","SS","SH"]
 
-    export strategy_type
-    const strategy_type = ["interaction", "assignment","observations"]
-
     export grid
 	const grid = 0.05:0.05:0.95
 

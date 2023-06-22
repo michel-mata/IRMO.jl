@@ -1,4 +1,5 @@
 """
+Get the social norm matrix
 """
 function get_norm(
     norm_ID::String
@@ -13,6 +14,7 @@ function get_norm(
 end
 
 """
+Functions for sampling from the simplex
 """
 _sample(n) = [0,sort(rand(n-1))...,1]
 _diff(x) = circshift(x,-1)[1:end-1]-x[1:end-1]
@@ -31,13 +33,23 @@ function get_initial_frequencies(S;random=false,grid=0.05:0.05:0.95)
     return freqs
 end
 
+"""
+Remove numerical zeros
+"""
 function chop_pt(ss)
-    # ss = [ss...,1-sum(ss)]
     ss[abs.(ss) .< 1e-4] .= 0
     ss ./= sum(ss)
     return ss
 end
 
+"""
+Remove rows of zeros
+"""
+delete_zeros(fs) = hcat([row for row in eachrow(fs) if !all(row .== 0)]...)'|>Matrix
+
+"""
+Get the vertices of an S-simplex
+"""
 function get_vertex(S)
     fqs=[]
     for i in 1:S
@@ -48,6 +60,9 @@ function get_vertex(S)
     return fqs
 end
 
+"""
+Calculate eigenvalues of numerical jacobian at reached steady states
+"""
 function get_eigenvalues(path,norm,Ms,qs,parameters)
     S = length(Ms)
     reps = reshape(repeat([1.0],S*S),(S,S))
@@ -65,10 +80,12 @@ function get_eigenvalues(path,norm,Ms,qs,parameters)
 end
 
 """
+CDF of the binomial distribution
 """
 H(p,q,M) = sum( binomial(big(M),m) * p^m * (1-p)^(M-m) for m in q:M ; init=0)
 
 """
+Reputation and replicator dynamics
 """
 function get_full_dynamics(norm,Ms,qs,parameters)
     # Game and errors
@@ -89,6 +106,7 @@ function get_full_dynamics(norm,Ms,qs,parameters)
 end
 
 """
+Get reputation dynamics
 """
 function get_rep(norm,Ms,qs,parameters)
     reputation,_= get_full_dynamics(norm,Ms,qs,parameters)
@@ -96,16 +114,19 @@ function get_rep(norm,Ms,qs,parameters)
 end
 
 """
+Get replicator dynamics for time trajectories
 """
 function get_time_dynamics(norm,Ms,qs,parameters)
 
     reputation,replicator = get_full_dynamics(norm,Ms,qs,parameters)
-    replicator_dynamics(df,f,r,t) = df[1:length(f)] = replicator(f,reputation(f,r))#replicator([f...,1-sum(f)],reputation([f...,1-sum(f)],r))[1:end-1]
+    replicator_dynamics(df,f,r,t) = df[1:length(f)] = replicator(f,reputation(f,r))
 
     return replicator_dynamics
 end
 
 """
+Integrate numerically until a steady state is reached.
+The initial frequencies are deterministic, evenly spaced, and determined by the global variable `grid`.
 """
 function steady_states_detIC(path, parameters, norm, Ms, qs; r0=1.0, refine=true)
     # Paths for results
@@ -180,10 +201,8 @@ function steady_states_detIC(path, parameters, norm, Ms, qs; r0=1.0, refine=true
 end
 
 """
-"""
-delete_zeros(fs) = hcat([row for row in eachrow(fs) if !all(row .== 0)]...)'|>Matrix
-
-"""
+Integrate numerically until a steady state is reached.
+The initial frequencies are sampled uniformly at random.
 """
 function steady_states_rndIC(path, parameters, norm, Ms, qs, num_ic; r0=1.0, refine=false)
     # Paths for results
@@ -287,6 +306,7 @@ function steady_states_rndIC(path, parameters, norm, Ms, qs, num_ic; r0=1.0, ref
 end
 
 """
+Integrate numerically until a steady state is reached, saving the full time trajectory.
 """
 function trajectories_detIC(path, parameters, norm, Ms, qs; T=1e1, r0=1.0, expand=false)
     # Paths for results
@@ -367,6 +387,7 @@ function trajectories_detIC(path, parameters, norm, Ms, qs; T=1e1, r0=1.0, expan
 end
 
 """
+Expand integration to a lower tolerance.
 """
 function refine_steady_states(path, parameters, norm, Ms, qs; r0=1.0)
     # Paths for results
