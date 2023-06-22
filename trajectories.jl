@@ -59,27 +59,4 @@ for norm in social_norms
             trajectories_detIC(path*"$q/", parameters, norm, Ms[q], thresholds[q])
         end
     end
-
-    for M in 2:2:10
-        Ms = [M,M,M]
-        qs = [1,Int(M/2),M]
-        # Paths for results
-        path = "results/trajectories/assignment/$norm/Qs-alone/$M/"
-        "\n\n"*path*"\n" |> println
-        # Obtain trajectories
-        trajectories_detIC(path, parameters, norm, Ms, qs)
-    end
-end
-
-
-for norm in social_norms, M in 4:2:10
-    Ms = [M,M,M]
-    thresholds = [[M,Int(M/2),0],[Int(M/2),M,1],[1,0,Int(M/2)],[0,1,M]]
-    # Paths for results
-    path = "results/trajectories/assignment/$norm/Qs-ALLC-M$M/"
-    "\n\n"*path*"\n" |> println
-    # Obtain trajectories
-    for q in eachindex(thresholds)
-        trajectories_detIC(path*"$q/", parameters, nor, Ms, thresholds[q])
-    end
 end

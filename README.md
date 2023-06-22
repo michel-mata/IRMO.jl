@@ -1,2 +1,9 @@
 # IRMO.jl
-Indirect Reciprocity under private monitoring and aggregation of multiple observations.
+Indirect Reciprocity models under private monitoring and with a reputation assignment system that aggregates multiple observations of a recipient.
+
+For the evolutionary dynamics between $ALLC$, $ALLD$, and $DISC_{q,M}$ run: `interaction.jl`.
+
+For the evolution of tolerance in the aggregation process run: `assignment.jl`.
+
+For the evolution of the number of observations used to assign reputations run: `obsevations.jl`.
+
