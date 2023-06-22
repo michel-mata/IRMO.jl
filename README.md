@@ -1,5 +1,5 @@
 # IRMO.jl
-Indirect Reciprocity model a private reputation assignment system that aggregates multiple observations of a recipient.
+Indirect Reciprocity model under a private reputation assignment system that aggregates multiple observations of a recipient.
 
 For the evolutionary dynamics between $ALLC$, $ALLD$, and $DISC_{q,M}$ run: `interaction.jl`.
 
