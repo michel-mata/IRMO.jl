@@ -72,4 +72,3 @@ All data used to produce figures of the paper is available in the `results/` fol
 
 ---
 Copyright (c) 2023 Sebastian Michel-Mata
----
