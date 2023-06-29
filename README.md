@@ -3,10 +3,8 @@
 [![Build status (Github Actions)](https://github.com/michel-mata/IRMO.jl/workflows/CI/badge.svg)](https://github.com/michel-mata/IRMO.jl/actions)
 [![Documentation](https://github.com/michel-mata/IRMO.jl/actions/workflows/Documentation.yml/badge.svg)](https://github.com/michel-mata/IRMO.jl/actions/workflows/Documentation.yml)
 [![](https://img.shields.io/badge/docs-stable-blue.svg)](https://michel-mata.github.io/IRMO.jl)
----
 
 Indirect Reciprocity model under private monitoring that aggregates multiple observations of a recipient to assign a reputation.
-
 
 
 ## System requirements
@@ -30,7 +28,7 @@ For installation of all packages and precompilation of the `IRMO.jl` module, run
 Expected installation and precompilation time is 5 minutes.
 
 ## Demo
-For a demo, run the following code:
+For a demo, run the file `demo.jl` or the following code:
 ```julia
 # Load packages
 include("./setup.jl")
@@ -46,19 +44,13 @@ path = "demo/$norm/"
 # Obtain attractors
 steady_states_detIC(path, parameters, norm, Ms, qs)
 ```
-Or the file `demo.jl`.
 
 The expected output is a folder `demo/SJ` containing the files:
-
-`f0.csv`: containing the 171 initial frequencies of the simulation.
-
-`ss.csv`: containing the reached steady states after integration of such initial frequencies.
-
-`coop.csv`: containing the cooperation level of a population in such steady state.
+- `f0.csv`: containing the 171 initial frequencies of the simulation.
+- `ss.csv`: containing the reached steady states after integration of such initial frequencies.
+- `coop.csv`: containing the cooperation level of a population in such steady state.
 
 Expected running time of demo with a single worker is 15 minutes.
-
-
 
 ## Instructions for use and reproduction of data
 For the evolutionary dynamics between $ALLC$, $ALLD$, and $DISC_{q,M}$ run: `interaction.jl`.
