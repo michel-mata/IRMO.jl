@@ -5,15 +5,17 @@
 
 Indirect Reciprocity model under private monitoring that aggregates multiple observations of a recipient to assign a reputation.
 
+Check out the documentation: 
+
 ## System requirements
 The code was produced on Julia v1.8.5 and uses the following packages:
 ```
-DifferentialEquations v7.7.0
-ForwardDiff v0.10.35
-NLsolve v4.5.1
-SciMLNLSolve v0.1.4
-StaticArrays v1.5.19
-StatsBase v0.33.21
+DifferentialEquations
+ForwardDiff
+NLsolve
+SciMLNLSolve
+StaticArrays
+StatsBase
 DelimitedFiles
 Distributed
 LinearAlgebra
@@ -27,7 +29,7 @@ Expected installation and precompilation time is 5 minutes.
 
 ## Demo
 For a demo, run the following code:
-```
+```julia
 # Load packages
 include("./setup.jl")
 # Game parameters
@@ -38,16 +40,21 @@ norm = "SJ"
 Ms = [1,1,1]
 qs = [0,2,1]
 # Paths for results
-path = "demo/$norm"
+path = "demo/$norm/"
 # Obtain attractors
 steady_states_detIC(path, parameters, norm, Ms, qs)
 ```
 Or the file `demo.jl`.
 
 The expected output is a folder `demo/SJ` containing the files:
+
 `f0.csv`: containing the 171 initial frequencies of the simulation.
+
 `ss.csv`: containing the reached steady states after integration of such initial frequencies.
-`coop.csv`: containing the cooperation rate 
+
+`coop.csv`: containing the cooperation level of a population in such steady state.
+
+Expected running time of demo with a single worker is 15 minutes.
 
 ## Instructions for use and reproduction of data
 For the evolutionary dynamics between $ALLC$, $ALLD$, and $DISC_{q,M}$ run: `interaction.jl`.
