@@ -7,7 +7,7 @@
 
 Indirect Reciprocity model under private monitoring that aggregates multiple observations of a recipient to assign a reputation.
 
-Check out the documentation: 
+
 
 ## System requirements
 The code was produced on Julia v1.8.5 and uses the following packages:
@@ -58,6 +58,8 @@ The expected output is a folder `demo/SJ` containing the files:
 
 Expected running time of demo with a single worker is 15 minutes.
 
+
+
 ## Instructions for use and reproduction of data
 For the evolutionary dynamics between $ALLC$, $ALLD$, and $DISC_{q,M}$ run: `interaction.jl`.
 
@@ -67,4 +69,7 @@ For the evolution of the number of observations used to assign reputations run: 
 
 All data used to produce figures of the paper is available in the `results/` folder.
 
+
+---
 Copyright (c) 2023 Sebastian Michel-Mata
+---
