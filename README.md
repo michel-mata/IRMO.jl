@@ -25,6 +25,7 @@ For more information, check `Project.toml` and `Manifest.toml`.
 
 ## Installation guide
 For installation of all packages and precompilation of the `IRMO.jl` module, run: `setup.jl`.
+
 Expected installation and precompilation time is 5 minutes.
 
 ## Demo
@@ -53,11 +54,9 @@ The expected output is a folder `demo/SJ` containing the files:
 Expected running time of demo with a single worker is 15 minutes.
 
 ## Instructions for use and reproduction of data
-For the evolutionary dynamics between $ALLC$, $ALLD$, and $DISC_{q,M}$ run: `interaction.jl`.
-
-For the evolution of tolerance in the aggregation process run: `assignment.jl`.
-
-For the evolution of the number of observations used to assign reputations run: `obsevations.jl`.
+- For the evolutionary dynamics between $ALLC$, $ALLD$, and $DISC_{q,M}$ run: `interaction.jl`.
+- For the evolution of tolerance in the aggregation process run: `assignment.jl`.
+- For the evolution of the number of observations used to assign reputations run: `obsevations.jl`.
 
 All data used to produce figures of the paper is available in the `results/` folder.
 
