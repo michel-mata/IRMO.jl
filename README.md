@@ -1,6 +1,6 @@
 # IRMO.jl
 
-![Build status (Github Actions)](https://github.com/michel-mata/IRMO.jl/workflows/CI/badge.svg)](https://github.com/michel-mata/IRMO.jl/actions)
+[![Build status (Github Actions)](https://github.com/michel-mata/IRMO.jl/workflows/CI/badge.svg)](https://github.com/michel-mata/IRMO.jl/actions)
 [![Documentation](https://github.com/michel-mata/IRMO.jl/actions/workflows/Documentation.yml/badge.svg)](https://github.com/michel-mata/IRMO.jl/actions/workflows/Documentation.yml)
 [![](https://img.shields.io/badge/docs-stable-blue.svg)](https://michel-mata.github.io/IRMO.jl)
 ---
