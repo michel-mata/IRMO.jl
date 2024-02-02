@@ -55,8 +55,11 @@ Expected running time of demo with a single worker is 15 minutes.
 
 ## Instructions for use and reproduction of data
 - For the evolutionary dynamics between $ALLC$, $ALLD$, and $DISC_{q,M}$ run: `interaction.jl`.
-- For the evolution of tolerance in the aggregation process run: `assignment.jl`.
-- For the evolution of the number of observations used to assign reputations run: `obsevations.jl`.
+- For the time trajectories of the evolutionary dynamics between $ALLC$, $ALLD$, and $DISC_{q,M}$ run: `trajectories.jl`.
+- For the evolution of elements of the aggregation rule ($q$ or $M$) run: `robustness.jl`.
+- For the coevolution of the aggregation rule ($q$,$M$) run: `coevolution.jl`.
+- For the evolution of social norms or strategy competition under heterogeneous norms run: `norms.jl`.
+- For the evolutionary dynamics between $DISC_{q,M}$ and $probC$ run: `probabilistic.jl`.
 
 All data used to produce figures of the paper is available in the `results/` folder.
 
