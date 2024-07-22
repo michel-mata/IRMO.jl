@@ -43,6 +43,18 @@ Download and install Julia by following these [instructions](https://julialang.o
 > > winget install julia -s msstore
 > ```
 
+This will install the `juliaup` installation manager.
+Make sure to be up to date by running:
+
+> ```console
+> $ juliaup update
+> $ juliaup default release
+> ```
+
+To install different versions or explore more options run `juliaup --help`.
+
+### Run scripts
+
 Once installed, Julia will be available via the command line interface. Then, a script like `my_script.jl` can be run as:
 
 ```console
