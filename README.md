@@ -3,8 +3,11 @@
 [![Build status (Github Actions)](https://github.com/michel-mata/IRMO.jl/workflows/CI/badge.svg)](https://github.com/michel-mata/IRMO.jl/actions)
 [![Documentation](https://github.com/michel-mata/IRMO.jl/actions/workflows/Documentation.yml/badge.svg)](https://github.com/michel-mata/IRMO.jl/actions/workflows/Documentation.yml)
 [![DOCS](https://img.shields.io/badge/docs-stable-blue.svg)](https://michel-mata.github.io/IRMO.jl)
+[![DOI](https://zenodo.org/badge/657317785.svg)](https://zenodo.org/doi/10.5281/zenodo.12795781)
 
 Indirect Reciprocity model under private monitoring that aggregates multiple observations of a recipient to assign a reputation.
+
+Zenodo DOI: 10.5281/zenodo.12795782
 
 ## System requirements
 
