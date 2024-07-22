@@ -2,7 +2,7 @@
 
 [![Build status (Github Actions)](https://github.com/michel-mata/IRMO.jl/workflows/CI/badge.svg)](https://github.com/michel-mata/IRMO.jl/actions)
 [![Documentation](https://github.com/michel-mata/IRMO.jl/actions/workflows/Documentation.yml/badge.svg)](https://github.com/michel-mata/IRMO.jl/actions/workflows/Documentation.yml)
-[![](https://img.shields.io/badge/docs-stable-blue.svg)](https://michel-mata.github.io/IRMO.jl)
+[![DOCS](https://img.shields.io/badge/docs-stable-blue.svg)](https://michel-mata.github.io/IRMO.jl)
 
 Indirect Reciprocity model under private monitoring that aggregates multiple observations of a recipient to assign a reputation.
 
@@ -51,10 +51,28 @@ $ julia my_script.jl
 
 ## Module installation guide
 
+### Download the repository
+
+Clone this repository either by the `Download ZIP` option under the `Code` dropdown menu above, or by running:
+
+```console
+$ git clone https://github.com/michel-mata/IRMO.jl.git
+```
+
+For more information on how to clone a repository visit the [documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+
+### Install packages
+
 For installation of all packages and precompilation of the `IRMO.jl` module, run `setup.jl` as:
 
 ```console
 $ julia setup.jl
+```
+
+Assuming the command line is in the directory of the repository. Alternatively, run the script using the relative path to the repository as:
+
+```console
+$ julia path/to/repo/setup.jl
 ```
 
 Expected installation and precompilation time is 5 minutes.
@@ -65,6 +83,12 @@ For a demo, run the file `demo.jl` as:
 
 ```console
 $ julia demo.jl
+```
+
+Assuming the command line is in the directory of the repository. Alternatively, run the script using the relative path to the repository as:
+
+```console
+$ julia path/to/repo/demo.jl
 ```
 
 Or the following code in Julia:
@@ -100,6 +124,7 @@ Expected running time of demo with a single worker is 15 minutes.
 - For the evolution of elements of the aggregation rule ($q$ or $M$) run: `robustness.jl`.
 - For the coevolution of the aggregation rule ($q$,$M$) run: `coevolution.jl`.
 - For the evolution of social norms or strategy competition under heterogeneous norms run: `norms.jl`.
+- For the independent evolution of social norms and strategies run: `independent.jl`.
 - For the evolutionary dynamics between $DISC_{q,M}$ and $probC$ run: `probabilistic.jl`.
 
 All data used to produce figures of the paper is available in the `results/` folder.

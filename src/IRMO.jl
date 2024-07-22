@@ -11,7 +11,7 @@ module IRMO
     using SharedArrays
 
     # Auxiliar functions
-    include("./module/aux.jl")
+    include("./module/fns-aux.jl")
     export chop_pt
     export get_norm
     export get_initial_frequencies
@@ -43,6 +43,11 @@ module IRMO
     export steady_states_rndIC_nf
     export refine_steady_states_nf
     export get_cooperation_nf
+    # Independent strategy and norm co-evolution
+    include("./module/fns-strats-and-norms.jl")
+    export steady_states_normInd
+    export refine_steady_normInd
+    export get_cooperation_normInd
     # Strategy competition with probabilistic cooperator
     include("./module/fns-probc.jl")
     export get_full_dynamics_s

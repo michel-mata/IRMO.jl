@@ -148,9 +148,7 @@ function steady_states_detIC_nf(path, parameters, norms, Ms, qs, n; r0=1.0, refi
 end
 
 """
-Integrate numerically until a steady state is reached.
-The initial frequencies are sampled uniformly at random.
-Function fitted for strategy competition under fixed mixture of norms.
+Expand integration to a lower tolerance for strategy competition under fixed mixture of norms.
 """
 function refine_steady_states_nf(path, parameters, norms, Ms, qs, n; r0=1.0)
    # Paths for results
