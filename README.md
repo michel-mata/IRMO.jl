@@ -144,5 +144,8 @@ Expected running time of demo with a single worker is 15 minutes.
 
 All data used to produce figures of the paper is available in the `results/` folder.
 
+The Mathematica notebook to plot the panels is available in the `reproduce_figures/` folder.
+The panels are in the `reproduce_figures/figures/` folder.
+
 ---
 Copyright (c) 2023 Sebastian Michel-Mata
