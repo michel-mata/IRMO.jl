@@ -20,9 +20,9 @@ for norm in social_norms
 end
 
 # Trios with unconditional strategies
-for norm in social_norms, M in 2:2:10
+for norm in social_norms, M in 2:2:2
     thresholds = [1,Int(M/2),M]
-    ql = ["min","med","max"]
+    ql = ["med","max"]
 
     for q in eachindex(thresholds)
         # Paths for results
@@ -39,23 +39,16 @@ for norm in social_norms, M in 2:2:10
 end
 
 # Fixed M and 3 thresholds with unconditional
-for norm in social_norms, M in 2:2:10
+for norm in social_norms
+    M = 2
     # Paths for results
     evolving = "assignment"
     path = "results/endpoints/$evolving/$norm/$M/"
     "\n\n"*path*"\n" |> println
     # Between thresholds and unconditional strategies
-    if M==2
-        Ms = [1,M,M,1]
-        qs = [0,1,M,2]
-        # Obtain attractors
-        steady_states_detIC(path, parameters, norm, Ms, qs)
-    else
-        num_ic = 1_000
-        Ms = [1,M,M,M,1]
-        qs = [0,1,Int(M/2),M,2]
-        # Obtain attractors
-        steady_states_rndIC(path, parameters, norm, Ms, qs, num_ic, refine=true)
-    end
+    Ms = [1,M,M,1]
+    qs = [0,1,M,2]
+    # Obtain attractors
+    steady_states_detIC(path, parameters, norm, Ms, qs)
     get_cooperation(path, parameters, norm, Ms, qs)
 end

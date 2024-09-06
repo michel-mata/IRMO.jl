@@ -45,18 +45,4 @@ for norm in social_norms
             trajectories_detIC(path*"$q/", parameters, norm, Ms, thresholds[q])
         end
     end
-
-    # Look twice forgive once (competition of observations)
-    begin
-        # Sets of strategies
-        Ms = [[1,2,2],[2,1,2],[2,2,2],[2,2,1]]
-        thresholds = [[1,1,0],[1,1,3],[3,0,1],[0,3,1]]
-        # Paths for results
-        path = "results/trajectories/observations/$norm/Ms/"
-        "\n\n"*path*"\n" |> println
-        # Obtain trajectories
-        for q in eachindex(thresholds)
-            trajectories_detIC(path*"$q/", parameters, norm, Ms[q], thresholds[q])
-        end
-    end
 end
